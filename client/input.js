@@ -5,7 +5,7 @@ Template.footer.events({
       var charCode = (typeof e.which == "number") ? e.which : e.keycode;
       if (charCode == 13) {
         e.stopPropagation();
-        Messages.call('newMessage', {text: $('.input-box_text').val()});
+        Meteor.call('newMessage', {text: $('.input-box_text').val()});
         $('.input-box_text').val("");
         return false;
       }

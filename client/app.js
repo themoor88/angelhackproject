@@ -6,12 +6,6 @@ Accounts.ui.config({
   passwordSignupFields: 'USERNAME_AND_EMAIL'
 });
 
-Messages.insert({
-  text: $('.input-text_box').val(),
-  user: Meteor.userId(),
-  timestamp: Date.now()
-});
-
 Template.registerHelper('currentChannel', function() {
   return Session.get('channel');
 });
@@ -51,19 +45,3 @@ Template.channel.helpers({
     }
   }
 });
-
-// Temaplate.channel.events({
-//   'click .channel': function(e) {
-//     Session.set('channel', this.name);
-//   }
-// });
-
-// Template.messages.onCreated(function() {
-//   var self = this;
-//   self.autorun(function() {
-//     self.subscribe('messages', Session.get('channel'));
-//   });
-// });
-
-// Meteor.subscribe('messages');
-// Meteor.subscribe('allUsernames');

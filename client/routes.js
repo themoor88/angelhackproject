@@ -1,5 +1,5 @@
 Router.configure({
-  layourTemplate: 'app'
+  layoutTemplate: 'app'
 });
 
 Router.route('/:channel', function() {
@@ -9,4 +9,4 @@ Router.route('/:channel', function() {
 
 Router.route('/', function() {
   this.redirect('/general');
-})
+});

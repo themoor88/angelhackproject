@@ -12,6 +12,10 @@ Messages.insert({
   timestamp: Date.now()
 });
 
+Template.registerHelper('currentChannel', function() {
+  return Session.get('channel');
+});
+
 Template.registerHelper("timestampToTime", function(timestamp) {
   var date = new Date(timestamp);
   var hours = date.getHours();
@@ -32,6 +36,34 @@ Template.registerHelper("usernameFromId", function(userId) {
   return user.username;
 });
 
+Template.listings.helpers({
+  channels: function() {
+    return Channels.find();
+  }
+});
 
-Meteor.subscribe('messages');
-Meteor.subscribe('allUsernames');
+Template.channel.helpers({
+  active: function() {
+    if (Session.get('channel') === this.name) {
+      return "active";
+    } else {
+      return "";
+    }
+  }
+});
+
+// Temaplate.channel.events({
+//   'click .channel': function(e) {
+//     Session.set('channel', this.name);
+//   }
+// });
+
+// Template.messages.onCreated(function() {
+//   var self = this;
+//   self.autorun(function() {
+//     self.subscribe('messages', Session.get('channel'));
+//   });
+// });
+
+// Meteor.subscribe('messages');
+// Meteor.subscribe('allUsernames');

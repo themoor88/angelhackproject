@@ -12,7 +12,8 @@ Meteor.startup(function() {
       return Fake.sentence();
     },
     user: Meteor.users.findOne()._id,
-    timestamp: Date.now()
+    timestamp: Date.now(),
+    channel: 'general'
   });
 
   Messages.remove({});
@@ -22,4 +23,12 @@ Meteor.startup(function() {
       Factory.create('message');
     });
   }
+
+  Channels.remove({});
+  Channels.insert({
+    name: "general"
+  });
+  Channels.insert({
+    name: "random"
+  });
 });

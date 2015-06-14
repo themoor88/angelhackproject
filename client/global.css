@@ -289,7 +289,7 @@ body {
   font-style: italic;
   display: block;
   min-height: 1rem;
-  padding-bottom: 80px;
+  padding-bottom: 10px;
 }
 
 /* line 4, ../tests/sass/components/_user-menu.scss */

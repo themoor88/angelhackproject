@@ -106,6 +106,7 @@ body {
   bottom: 0;
   height: 64px;
   width: 100%;
+  background-color: #fff;
 }
 
 /* line 1, ../tests/sass/components/_header.scss */
@@ -288,6 +289,7 @@ body {
   font-style: italic;
   display: block;
   min-height: 1rem;
+  padding-bottom: 80px;
 }
 
 /* line 4, ../tests/sass/components/_user-menu.scss */
@@ -351,7 +353,6 @@ body {
   font-size: .95rem;
   width: 90%;
   margin-left: 2%;
-  margin-bottom: auto;
   line-height: 1.2rem;
   border: 2px solid #e0e0e0;
   -moz-border-radius: 0.2rem;
@@ -401,9 +402,6 @@ body {
 .unread {
   background-color: #fff;
 }
-.message-history {
-  margin-top: 50px;
-}
 .login-buttons {
   margin-left: 50px;
 }
@@ -416,6 +414,5 @@ body {
   margin: 0 0 30px 30px;
 
 }
-
 
 
